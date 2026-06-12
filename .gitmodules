@@ -1,0 +1,3 @@
+[submodule "libs/medusa"]
+	path = libs/medusa
+	url = git@github.com:June-UwU/medusa.git
