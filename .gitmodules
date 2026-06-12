@@ -1,0 +1,3 @@
+[submodule "libs/medusa"]
+	path = libs/medusa
+	url = https://github.com/June-UwU/medusa.git
