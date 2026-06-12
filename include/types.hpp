@@ -19,6 +19,26 @@ using f64 = double;
 
 constexpr const result_t SUCCESS = 0x0;
 constexpr const result_t E_INVAL = 0x1;
+constexpr const result_t E_FAIL = 0x2;
+
+inline const char *result_to_string(result_t result) {
+  const char *error_string = nullptr;
+  switch (result) {
+  case SUCCESS:
+    error_string = "success";
+    break;
+  case -E_INVAL:
+    error_string = "invalid arguments";
+    break;
+  case -E_FAIL:
+    error_string = "failed";
+    break;
+  default:
+    error_string = "unknown error";
+  }
+
+  return error_string;
+}
 
 inline bool is_error(result_t result) {
   bool is_error = true;
@@ -27,8 +47,7 @@ inline bool is_error(result_t result) {
     is_error = false;
     break;
   case -E_INVAL:
-    is_error = true;
-    break;
+  case -E_FAIL:
   default:
     is_error = true;
     break;

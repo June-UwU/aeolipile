@@ -1,3 +1,6 @@
 [submodule "libs/medusa"]
 	path = libs/medusa
 	url = https://github.com/June-UwU/medusa.git
+[submodule "libs/glfw"]
+	path = libs/glfw
+	url = https://github.com/glfw/glfw.git
