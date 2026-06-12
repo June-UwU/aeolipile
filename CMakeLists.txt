@@ -7,6 +7,7 @@ file(GLOB_RECURSE CORE_FILES "core/*.cxx")
 add_library(aeolipile ${UTILS_FILES} ${CORE_FILES})
 
 target_include_directories(aeolipile PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/libs/glfw/include>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/utils>
     $<INSTALL_INTERFACE:include>
@@ -16,4 +17,4 @@ target_include_directories(aeolipile PUBLIC
 add_subdirectory(libs)
 add_subdirectory(example)
 target_compile_features(aeolipile PUBLIC cxx_std_20)
-target_link_libraries(aeolipile PRIVATE medusa)
+target_link_libraries(aeolipile PRIVATE medusa glfw)
