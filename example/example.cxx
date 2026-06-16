@@ -1,4 +1,5 @@
 #include "aeolipile.hpp"
+#include "gfx_iface.hpp"
 #include "types.hpp"
 #include <iostream>
 
@@ -13,6 +14,9 @@ int main() {
   if (nullptr == main_window) {
     return -1;
   }
+
+  std::unique_ptr<aeo::gfx::context> ctx =
+      aeo::gfx::create_context_with_swapchain(main_window, 1080, 720, {});
 
   while (!glfwWindowShouldClose(main_window)) {
   }

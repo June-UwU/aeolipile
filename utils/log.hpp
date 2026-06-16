@@ -13,6 +13,8 @@ result_t deinitialize();
 
 #define LOGL(format, ...)                                                      \
   medusa::write_log(medusa::log_level::log, format __VA_OPT__(, ) __VA_ARGS__)
+#define LOGD(format, ...)                                                      \
+  medusa::write_log(medusa::log_level::log, format __VA_OPT__(, ) __VA_ARGS__)
 #define LOGP(format, ...)                                                      \
   medusa::write_log(medusa::log_level::paranoid,                               \
                     format __VA_OPT__(, ) __VA_ARGS__)
@@ -24,6 +26,9 @@ result_t deinitialize();
 
 #define TLOGL(format, ...)                                                     \
   medusa::write_timed_log(medusa::log_level::log,                              \
+                          format __VA_OPT__(, ) __VA_ARGS__)
+#define TLOGD(format, ...)                                                     \
+  medusa::write_timed_log(medusa::log_level::debug,                            \
                           format __VA_OPT__(, ) __VA_ARGS__)
 #define TLOGP(format, ...)                                                     \
   medusa::write_timed_log(medusa::log_level::paranoid,                         \

@@ -5,7 +5,6 @@
 namespace aeo {
 namespace utils {
 
-class pool;
 template <typename tag, typename index_t = u32> class handle final {
   static_assert(sizeof(index_t) >= sizeof(u16) &&
                     sizeof(index_t) <= sizeof(u32),
